@@ -62,8 +62,8 @@ copy_artifacts "deployments"
 
   echo " Veer - Custom code for binary deployment"
   # Picks up WAR_FILE_URL from buildConfig
-  echo ${WAR_FILE_URL}
-  curl -o ${DEPLOY_DIR}/ROOT.war -O ${WAR_FILE_URL}
+  echo https://raw.githubusercontent.com/VeerMuchandi/ps/master/deployments/ROOT.war
+  curl -o ${DEPLOY_DIR}/ROOT.war -O https://raw.githubusercontent.com/VeerMuchandi/ps/master/deployments/ROOT.war
 
 if [ -d $LOCAL_SOURCE_DIR/configuration ]; then
   echo "Copying config files from project..."
@@ -83,8 +83,8 @@ unzip newrelic.zip -d /opt/webserver && cd /opt/webserver/newrelic
 
 #modify config file with license key
 echo "Updating New Relic configuration file..."
-sed -ie "s/<%= license_key %>/${NEWRELIC_LICENSE}/g" newrelic.yml
-sed -ie "s/My Application/${NEWRELIC_APPNAME}/g" newrelic.yml
+sed -ie "s/<%= license_key %>/39decd32227de251ef3262b30089be22c835NRAL/g" newrelic.yml
+sed -ie "s/My Application/mypetstore/g" newrelic.yml
 
 # Adding JVM Argument for New Relic agent
 echo "Adding JVM Argument for New Relic agent..."
