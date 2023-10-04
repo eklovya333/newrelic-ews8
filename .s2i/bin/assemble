@@ -75,7 +75,7 @@ echo "Beginning the deployment of New Relic Java agent"
 
 #Downloading latest agent software
 echo "Downloading the latest java agent from New Relic..."
-curl -o newrelic.zip hhttps://download.newrelic.com/newrelic/java-agent/newrelic-agent/8.2.0/newrelic-java.zip
+curl -o newrelic.zip https://download.newrelic.com/newrelic/java-agent/newrelic-agent/8.2.0/newrelic-java.zip
 #Prepping New Relic files
 echo "New Relic file download complete, unzipping archive..."
 unzip newrelic.zip -d /opt/webserver && cd /opt/webserver/newrelic
